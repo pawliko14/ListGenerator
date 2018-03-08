@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="FONT"/>
+	<classpathentry kind="src" path="img"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/commons-logging-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/hsqldb.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/forms-1.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-barcodes-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-font-asian-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-forms-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-hyph-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-io-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-kernel-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-layout-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-pdfa-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itext7-sign-7.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/itextpdf-5.4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/jcalendar-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/jgoodies-common-1.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/jgoodies-looks-2.4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/junit-4.6.jar"/>
+	<classpathentry kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/mariadb-java-client-2.1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
