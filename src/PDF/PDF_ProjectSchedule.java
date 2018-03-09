@@ -2,11 +2,7 @@ package PDF;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Date;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
@@ -16,7 +12,6 @@ import WB.DBConnection;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 
 public class PDF_ProjectSchedule {
 
@@ -35,10 +30,32 @@ public class PDF_ProjectSchedule {
 		checkTypes();
 		System.out.println("Sprawdzilo typy");
 		fromVerkoop();
+		checkSent();
 		myConn.close();
 		System.out.println("Zakoñczy³o tworzenie project schedule");
 	}
 	
+	private void checkSent() throws SQLException {
+		//metoda ustawia parametr Wyslano = 1 w kalendarzu
+		//gdy projekt jest otwarty (w dziale Produkcja w HacoSofcie) AND
+		//gdy zamówienie sprzeda¿owe zostaje zamkniête AND
+		//gdy data kontraktowa (ta co pojawia siê na dokumencie WZ gdy maszyna wyje¿d¿a) jest starsza ni¿ dzieñ *dzisiaj*
+		
+		Calendar today = Calendar.getInstance();
+		SimpleDateFormat data = new SimpleDateFormat("yyyy-MM-dd");
+		
+		myConn = DBConnection.dbConnector();
+		Statement a = myConn.createStatement();
+		a.executeUpdate("update calendar " + 
+				"left join bestelling on bestelling.LEVERANCIERORDERNUMMER = NrMaszyny " + 
+				"left join verkoop on verkoop.SERIENUMMER = bestelling.ORDERNUMMER " + 
+				"set Wyslano = 1 " + 
+				"where NrMaszyny LIKE '2/%' AND WYslano = 0 AND KLIENT IS NOT NULL AND DATAKONTRAKT <> '' AND ZAKONCZONE = 0 and verkoop.statuscode = 'H' and datakontrakt < '"+data.format(today.getTime())+"'");
+		a.close();
+		myConn.close();
+		
+	}
+
 	private static void fromPartsoverview() throws SQLException {
 		//stworzenie polaczenia z baza danych
 		myConn = DBConnection.dbConnector();
@@ -532,11 +549,11 @@ public class PDF_ProjectSchedule {
 				UpdateProject.setString(1, typ);
 				UpdateProject.setString(2, numer);
 				UpdateProject.executeUpdate();
-				UpdateProject.close();
 			}
 		}
 		rs1.close();
 		st1.close();	
+		UpdateProject.close();
 		connection.close();
 	}
 	
@@ -558,8 +575,8 @@ public class PDF_ProjectSchedule {
 		
 		boolean red = false;
 		try {
-            Date wysylka = (Date) new SimpleDateFormat("yyyy-MM-dd").parse(dane[4]);
-            Date produkcja = (Date) new SimpleDateFormat("yyyy-MM-dd").parse(dane[3]);
+            Date wysylka = new SimpleDateFormat("yyyy-MM-dd").parse(dane[4]);
+            Date produkcja = new SimpleDateFormat("yyyy-MM-dd").parse(dane[3]);
             if (produkcja.compareTo(wysylka) > 0) red = true;
         } catch (ParseException e) {
         	System.out.println(dane[0]+" Problem z formatem daty");
