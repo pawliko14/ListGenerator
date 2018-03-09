@@ -23,7 +23,6 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import WB.MainProgramWindowStart;
 import WB.DBConnection;
 
 

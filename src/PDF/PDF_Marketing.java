@@ -1,6 +1,5 @@
 package PDF;
 
-import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -24,6 +23,7 @@ import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -319,7 +319,7 @@ public class PDF_Marketing {
 			PdfPCell cell = new PdfPCell(new Phrase(komorki[i], ffont3));
 			cell.setMinimumHeight(20f);
 			cell.setBackgroundColor(BaseColor.ORANGE);
-			cell.setBorder(PdfPCell.BOTTOM | PdfPCell.TOP);
+			cell.setBorder(Rectangle.BOTTOM | Rectangle.TOP);
 			cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 			cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 			t.addCell(cell);
@@ -959,7 +959,7 @@ public class PDF_Marketing {
 					PdfPCell cell = new PdfPCell(new Phrase(komorki[i], ffont));
 					cell.setMinimumHeight(40f);
 					cell.setBorderColor(BaseColor.GRAY);
-					cell.setBorder(PdfPCell.TOP); cell.setBorder(PdfPCell.BOTTOM);
+					cell.setBorder(Rectangle.TOP); cell.setBorder(Rectangle.BOTTOM);
 					cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 					cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 					table.addCell(cell);

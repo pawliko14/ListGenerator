@@ -10,8 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -688,7 +686,7 @@ public class PDF_SACA2 {
 		PdfPCell cell = new PdfPCell(new Phrase(z, ffont3));
 		if(a!=0) {
 			int green = Math.round((float)a*255/7); 
-			cell.setBackgroundColor(new BaseColor(255, (int) green, 0));
+			cell.setBackgroundColor(new BaseColor(255, green, 0));
 		}
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);

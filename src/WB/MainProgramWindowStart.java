@@ -3,10 +3,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -71,6 +68,7 @@ public class MainProgramWindowStart extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					MainProgramWindowStart frame = new MainProgramWindowStart();
@@ -91,7 +89,7 @@ public class MainProgramWindowStart extends JFrame {
 			nazwa = "listy_log_output.txt";
 		else
 			nazwa = "extra_log_output.txt";
-		PrintStream out;
+		/*PrintStream out;
 		try {
 			out = new PrintStream(new FileOutputStream("\\\\192.168.90.203\\Common\\Programy\\log\\"+nazwa));
 			System.setOut(out);
@@ -99,7 +97,7 @@ public class MainProgramWindowStart extends JFrame {
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
+		}*/
 		System.out.println(godz.format(date.getTime()));
 		
 		//utworzenie folderu na listy

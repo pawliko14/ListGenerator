@@ -2,9 +2,7 @@ package PDF;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 
@@ -13,9 +11,6 @@ import java.io.FileOutputStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
-import com.itextpdf.io.IOException;
-import com.itextpdf.kernel.geom.PageSize;
 
 import WB.DBConnection;
 
