@@ -23,5 +23,6 @@
 	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/jgoodies-looks-2.4.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/junit-4.6.jar"/>
 	<classpathentry kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/mariadb-java-client-2.1.2.jar"/>
+	<classpathentry kind="lib" path="//dataserver/Logistyka/Tosia/Projekty JAVA/biblioteki/jfilechooser-bookmarks-0.1.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
