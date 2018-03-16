@@ -24,7 +24,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import WB.DBConnection;
 import WB.MainProgramWindowStart;
 
-public class PDF_ProductionList {
+public class PDF_Lista_produkcyjna {
 
 	private static Font ffont;
 	private static Font ffont2;
@@ -65,7 +65,7 @@ public class PDF_ProductionList {
 			addRow(1,table);
 			
 			//creating a new list for welding base
-			PDF_WeldingList ListaSpawanaStara = new PDF_WeldingList();
+			PDF_Zlozenia_spawane ListaSpawanaStara = new PDF_Zlozenia_spawane();
 			
 			Statement pobierzProjectSchedule = myConn.createStatement();
 			String sql = "Select nrMaszyny, opis, klient, dataprodukcji, dataKoniecMontazu, komentarz from calendar where zakonczone = 0 order by dataprodukcji, nrmaszyny";

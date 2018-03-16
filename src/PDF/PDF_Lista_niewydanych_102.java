@@ -27,7 +27,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import WB.DBConnection;
 
-public class PDF_Taktowa102 {
+public class PDF_Lista_niewydanych_102 {
 
 	public static Font ffont = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 12); 
 	public static Font ffont2 = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 10); 

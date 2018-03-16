@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 
-public class PDF_MontageList {
+public class PDF_Harmonogram_montazu {
 	
 
 	private static Font ffont = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 10); 
@@ -48,6 +48,7 @@ public class PDF_MontageList {
 			ML.open();
 			writer.setPageEvent(new PDF_MyFooter());
 			PdfPTable table = new PdfPTable(33);
+			//ustawianie szerokosci
 			float widths[] = new float[] { 10, 26, 49, 35, 30, 30, 10, 10, 10, 10, 10, 10, 10, 10, 20, 40, 20, 20, 20, 20, 10, 10, 10, 10, 20, 50, 30, 20, 20, 20, 20, 20, 30};
 			addHeader(table);
 			//addRow(1, table);
@@ -190,8 +191,8 @@ public class PDF_MontageList {
 							ResultSet WorkplaceCodes;
 							Image img; Image img2; 
 							try{
-								img= Image.getInstance(PDF_MontageList.class.getClassLoader().getResource("tick2.png"));
-								img2 = Image.getInstance(PDF_MontageList.class.getClassLoader().getResource("tick2.png"));
+								img= Image.getInstance(PDF_Harmonogram_montazu.class.getClassLoader().getResource("tick2.png"));
+								img2 = Image.getInstance(PDF_Harmonogram_montazu.class.getClassLoader().getResource("tick2.png"));
 							}
 							catch(NullPointerException e) {
 								System.out.println("Nie znaleziono obrazu ticka");

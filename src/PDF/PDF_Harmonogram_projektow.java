@@ -13,13 +13,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-public class PDF_ProjectSchedule {
+public class PDF_Harmonogram_projektow {
 
 	//czcionka; polaczenie;
 	private static Font ffont =  FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 10);
 	private static Connection myConn;
 	
-	public PDF_ProjectSchedule() throws SQLException {
+	public PDF_Harmonogram_projektow() throws SQLException {
 		System.out.println("Tworzy harmonogram projektów");
 		fromPartsoverview();
 		fromWerkbons();

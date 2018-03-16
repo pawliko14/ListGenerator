@@ -25,20 +25,20 @@ import com.itextpdf.text.DocumentException;
 
 import PDF.PDF_AnalizaCNC;
 import PDF.PDF_AnalizaStruktur;
-import PDF.PDF_Braki;
+import PDF.PDF_Braki_w_uruchomieniu;
 import PDF.PDF_Construction;
-import PDF.PDF_ProductionList;
+import PDF.PDF_Lista_produkcyjna;
 import PDF.PDF_Godziny;
 import PDF.PDF_Marketing;
-import PDF.PDF_Materials;
-import PDF.PDF_MontageList;
+import PDF.PDF_Lista_materialow_zlecen;
+import PDF.PDF_Harmonogram_montazu;
 import PDF.PDF_Programisci;
-import PDF.PDF_ProjectSchedule;
-import PDF.PDF_SACA2;
+import PDF.PDF_Harmonogram_projektow;
+import PDF.PDF_SACA;
 import PDF.PDF_Serwis;
-import PDF.PDF_Taktowa;
-import PDF.PDF_Taktowa102;
-import PDF.PDF_Taktowa103;
+import PDF.PDF_Lista_niewydanych;
+import PDF.PDF_Lista_niewydanych_102;
+import PDF.PDF_Lista_niewydanych_103;
 import PDF.PDF_Zakupy;
 
 public class MainProgramWindowStart extends JFrame {
@@ -118,7 +118,7 @@ public class MainProgramWindowStart extends JFrame {
 		
 		//Harmonogramy - maszyn i wszystkich projektów
 		try {
-			new PDF_ProjectSchedule();
+			new PDF_Harmonogram_projektow();
 		} catch (SQLException e) {
 			System.out.println("Blad SQL w tworzeniu harmonogramu");
 			e.printStackTrace();
@@ -128,8 +128,8 @@ public class MainProgramWindowStart extends JFrame {
 		
 		//PDF harmonogramy maszyn
 		try {
-			PDF_ProjectSchedule.createPDFMachines();
-			PDF_ProjectSchedule.createPDFAll();
+			PDF_Harmonogram_projektow.createPDFMachines();
+			PDF_Harmonogram_projektow.createPDFAll();
 		} catch (SQLException e) {
 			System.out.println("Blad SQL w tworzeniu pdfów harmonogramu");
 			e.printStackTrace();
@@ -145,7 +145,7 @@ public class MainProgramWindowStart extends JFrame {
 		chk02.setSelected(true);
 		
 		//Lista produkcyjna 'Czesiowa' oraz zlozenia spawane
-		PDF_ProductionList.create();
+		PDF_Lista_produkcyjna.create();
 		chk03.setSelected(true);
 		
 		//Lista dla zakupów
@@ -153,18 +153,18 @@ public class MainProgramWindowStart extends JFrame {
 		chk04.setSelected(true);
 		
 		//Lista materialow (krajalnia)
-		PDF_Materials.createPDFs();
+		PDF_Lista_materialow_zlecen.createPDFs();
 		chk05.setSelected(true);
 		
 		//Listy niewydanych artykulow wedlug taktow - tylko magazyny 102, 103 i wszystko razem
-		PDF_Taktowa102.create();
-		PDF_Taktowa103.create();
-		PDF_Taktowa.create();
+		PDF_Lista_niewydanych_102.create();
+		PDF_Lista_niewydanych_103.create();
+		PDF_Lista_niewydanych.create();
 		chk06.setSelected(true);
 		
 		//Lista montazowa - co jest wykonane
 		try {
-			PDF_MontageList.create(true);
+			PDF_Harmonogram_montazu.create(true);
 		} catch (SQLException e) {
 			System.out.println("Blad SQL w tworzeniu listy montazowej");
 			e.printStackTrace();
@@ -173,11 +173,11 @@ public class MainProgramWindowStart extends JFrame {
 	
 		//Lista otwartych artykulow zamowionych w SACA do maszyn
 		try {
-			PDF_SACA2.createDB();
+			PDF_SACA.createDB();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		PDF_SACA2.createDoc();
+		PDF_SACA.createDoc();
 		chk08.setSelected(true);
 		
 		//Harmonogram dla marketingu (z podzialem na same magazynowki)
@@ -221,7 +221,7 @@ public class MainProgramWindowStart extends JFrame {
 			}
 	
 		try {
-			PDF_Braki.create();
+			PDF_Braki_w_uruchomieniu.create();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

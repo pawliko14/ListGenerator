@@ -26,7 +26,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import WB.DBConnection;
 
 
-public class PDF_Braki {
+public class PDF_Braki_w_uruchomieniu {
 
 	private static Font ffont;
 	private static Font ffont2;

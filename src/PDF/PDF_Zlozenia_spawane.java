@@ -28,7 +28,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import WB.DBConnection;
 
 
-public class PDF_WeldingList {
+public class PDF_Zlozenia_spawane {
 	
 	//klasa wewnetrzna okreslajace pare skladajaca sie z:
 	// nr projektu

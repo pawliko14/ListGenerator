@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 
-public class PDF_Materials {
+public class PDF_Lista_materialow_zlecen {
 	
 	//okreœlenie dwóch czcionek typu Times New Roman z szyfrowaniem CP1250 (polskie znaki) o wielkoœci 10 i 9
 	public static Font ffont = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 10); 
