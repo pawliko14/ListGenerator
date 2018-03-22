@@ -322,6 +322,8 @@ public class PDF_Harmonogram_montazu {
 								TakeTechn.close();
 							}
 							myStmt.close();
+							
+							//ZAKOÑCZENIE GÓRNEJ LINII TECHNOLOGII DLA PROJEKTU
 							//na tym poziomie mamy poukladana technologie do danego taktu: techn i statusy
 							int ileKomorek = techn.size();
 							if(ileKomorek>1){

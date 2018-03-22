@@ -43,8 +43,7 @@ public class PDF_Construction {
 		Document Lista = new Document(PageSize.A4);
 		try
 		{
-			String fName = "//192.168.90.203/Logistyka/Tosia/Projekty JAVA";
-			FontFactory.register(fName);
+			FontFactory.register(PDF_Construction.class.getClassLoader().getResource("times.ttf").toString(), "times");
 			font = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 12);
 			ffont = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 10);
 			ffont2 = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 6); 

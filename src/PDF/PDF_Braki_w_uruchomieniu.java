@@ -43,8 +43,7 @@ public class PDF_Braki_w_uruchomieniu {
 		SimpleDateFormat godz = new SimpleDateFormat("HH;mm");
 		Calendar date = Calendar.getInstance();
 		Document Braki = new Document(PageSize.A4, 10, 10, 25, 25);
-			String fName = "//192.168.90.203/Logistyka/Tosia/Projekty JAVA";
-			FontFactory.register(fName);
+			FontFactory.register(PDF_Braki_w_uruchomieniu.class.getClassLoader().getResource("times.ttf").toString(), "times");
 			ffont = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 10);
 			ffont2 = FontFactory.getFont("times", BaseFont.CP1250, BaseFont.EMBEDDED, 8); 
 			String path = PDF.Parameters.getPathToSave()+"/"+doNazwy.format(date.getTime())+"/";
