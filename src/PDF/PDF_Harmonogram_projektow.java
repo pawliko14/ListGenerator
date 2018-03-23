@@ -51,6 +51,11 @@ public class PDF_Harmonogram_projektow {
 				"left join verkoop on verkoop.SERIENUMMER = bestelling.ORDERNUMMER " + 
 				"set Wyslano = 1 " + 
 				"where NrMaszyny LIKE '2/%' AND WYslano = 0 AND KLIENT IS NOT NULL AND DATAKONTRAKT <> '' AND ZAKONCZONE = 0 and verkoop.statuscode = 'H' and datakontrakt < '"+data.format(today.getTime())+"'");
+		a.executeUpdate("update calendar " + 
+				"left join bestelling on bestelling.LEVERANCIERORDERNUMMER = NrMaszyny " + 
+				"left join verkoop on verkoop.SERIENUMMER = bestelling.ORDERNUMMER " + 
+				"set Wyslano = 0 " + 
+				"where NrMaszyny LIKE '2/%' AND WYslano = 1 AND KLIENT IS NOT NULL AND DATAKONTRAKT <> '' AND ZAKONCZONE = 0 and verkoop.statuscode = 'H' and datakontrakt >= '"+data.format(today.getTime())+"'");
 		a.close();
 		myConn.close();
 		
