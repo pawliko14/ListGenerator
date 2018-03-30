@@ -703,7 +703,6 @@ public class PDF_Harmonogram_projektow {
 		PdfPTable table = new PdfPTable(6);
 		float widths[] = new float[] { 10, 30, 15, 10, 10, 10};
 		createAHeader(table);
-		//createAFakeHeader(table);
 		
 		//poszerzenie listy o jedna kolumne - data wysylki
 		PdfPCell cell4 = new PdfPCell(new Phrase("Data wysy³ki", ffont));
